@@ -253,6 +253,133 @@
       </ul>
     </section>
     
+    <section id="ltqp-solid" class="slide" inlist="" rel="schema:hasPart" resource="#ltqp-solid">
+      <h2 property="schema:name">Link Traversal Query Processing for Solid</h2>
+      <p style="font-style: italic; font-size: 0.5em;">Taelman, R., Verborgh, R.: Link Traversal Query Processing over Decentralized Environments with Structural Assumptions. In: Proceedings of the 22nd International Semantic Web Conference (2023).</p>
+      <ul>
+          <li>
+          	  <h3>SPARQL query engine follows links between documents</h3>
+              <span class="indent">Exploits structural properties of Solid</span>
+          </li>
+      </ul>
+      <center>
+          <img src="img/sparql-decentralized-links.svg" alt="SPARQL link traversal" style="height: 200px; margin: 10px" \>
+      </center>
+    </section>
+    
+    <section id="ltqp-solid-demo" class="slide" inlist="" rel="schema:hasPart" resource="#ltqp-solid-demo">
+      <iframe src="https://comunica.github.io/comunica-feature-link-traversal-web-clients/builds/solid-default/#query=PREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0APREFIX%20snvoc%3A%20%3Chttps%3A%2F%2Fsolidbench.linkeddatafragments.org%2Fwww.ldbc.eu%2Fldbc_socialnet%2F1.0%2Fvocabulary%2F%3E%0ASELECT%20%3FmessageId%20%3FmessageCreationDate%20%3FmessageContent%20WHERE%20%7B%0A%20%20%3Fmessage%20snvoc%3AhasCreator%20%3Chttps%3A%2F%2Fsolidbench.linkeddatafragments.org%2Fpods%2F00000006597069767117%2Fprofile%2Fcard%23me%3E%3B%0A%20%20%20%20rdf%3Atype%20snvoc%3APost%3B%0A%20%20%20%20snvoc%3Acontent%20%3FmessageContent%3B%0A%20%20%20%20snvoc%3AcreationDate%20%3FmessageCreationDate%3B%0A%20%20%20%20snvoc%3Aid%20%3FmessageId.%0A%7D" style="width: 100%; height: 100%; margin: 0"></iframe>
+    </section>
+    
+    <section id="espresso" class="slide" inlist="" rel="schema:hasPart" resource="#espresso">
+      <h2 property="schema:name">ESPRESSO: keyword search over pods</h2>
+      <p style="font-style: italic; font-size: 0.5em;">Ragab, M., Savateev, Y., et al.: ESPRESSO: A Framework for Empowering Search on Decentralized Web. In: International Conference on Web Information Systems Engineering. pp. 360–375. Springer (2023).</p>
+      <ul>
+          <li>
+          	  <h3>Indexing of keywords in pods to enable search</h3>
+          </li>
+      </ul>
+      <center>
+          <img src="img/espresso.png" alt="ESPRESSO" style="height: 300px; margin: 10px" \>
+      </center>
+    </section>
+    
+    <section id="podquery" class="slide" inlist="" rel="schema:hasPart" resource="#podquery">
+      <h2 property="schema:name">POD-QUERY: query agent on pod</h2>
+      <p style="font-style: italic; font-size: 0.5em;">Vandenbrande, M., et al.: POD-QUERY: Schema Mapping and Query Rewriting for Solid Pods. In: ISWC2023, the International Semantic Web Conference (2023).</p>
+      <ul>
+          <li>
+          	  <h3>Full SPARQL querying within a single pod</h3>
+          </li>
+      </ul>
+      <center>
+          <img src="img/podquery.png" alt="POD-QUERY" style="height: 200px; margin: 10px" \>
+      </center>
+    </section>
+    
+    <section id="table-requirements" class="slide" inlist="" rel="schema:hasPart" resource="#table-requirements">
+      <h2 property="schema:name">No approach meets all requirements</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Requirement</th>
+            <th>LTQP Solid</th>
+            <th>ESPRESSO  </th>
+            <th>POD-QUERY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Execution of arbitrary structured queries</td>
+            <td>✓</td>
+            <td> </td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Discovery of data within pods</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Discovery of data across pods</td>
+            <td>✓</td>
+            <td>~</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>Handling location heterogeneity</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>Handling schema heterogeneity</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>Handling API heterogeneity</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>Authentication</td>
+            <td>✓</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+          <tr>
+            <td>User-perceived performance</td>
+            <td>~</td>
+            <td>✓</td>
+            <td>✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    
+    <section id="challenges" class="slide" inlist="" rel="schema:hasPart" resource="#challenges">
+      <h2 property="schema:name">Open challenges for the future</h2>
+     <ul>
+          <li>
+          	  <h3>Heterogeneity of schemas across pods</h3>
+              <span class="indent">Server-side or client-side schema alignment through reasoning</span>
+          </li>
+          <li>
+          	  <h3>Heterogeneity of APIs in pods</h3>
+              <span class="indent">Discovery of pod capabilities and usage during query planning</span>
+          </li>
+          <li>
+          	  <h3>Better performance for cross-pod queries</h3>
+              <span class="indent">Client-side optimization: link prioritization, query planning</span><br \>
+              <span class="indent">Aggregators exposing summaries across multiple pods</span>
+          </li>
+      </ul>
+    </section>
+    
     <section id="index-final" class="slide index" inlist="" rel="schema:hasPart" resource="#index-final">
       <ul>
         <li><a href="#index-solid">Solid</a></li>
@@ -262,7 +389,21 @@
     </section>
 	
     <section id="conclusion" class="slide" inlist="" rel="schema:hasPart" resource="#conclusion">
-      <h2 property="schema:name" class="big">TODO: Conclusion</h2>
+      <h2 property="schema:name" class="big">Conclusions</h2>
+      <ul>
+           <li>
+           	  <h3>Query engines can abstract access to DKGs</h3>
+               <span class="indent">Hide away complexities surrounding DKG access</span>
+           </li>
+           <li>
+           	  <h3>Querying DKGs introduces new requirements</h3>
+               <span class="indent">Requirements that do no exist for centralized querying</span>
+           </li>
+           <li>
+           	  <h3>Current approaches do not meet all requirements</h3>
+               <span class="indent">Open challenges on schema/API heterogeneity and performance</span>
+           </li>
+       </ul>
     </section>
 
     <footer>
