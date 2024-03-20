@@ -147,16 +147,102 @@
       </ul>
     </section>
 	
-    <section id="some-slide" class="slide" inlist="" rel="schema:hasPart" resource="#some-slide">
-      <h2 property="schema:name">TODO: A regular slide</h2>
+    <section id="requirement-queries" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-queries">
+      <h2 property="schema:name">1. Execution of structured queries</h2>
       <ul>
           <li>
-          	  <h3>A</h3>
-			  <span class="indent">TODO: Description</span>
+          	  <h3>Expressive query languages</h3>
+			  <span class="indent">E.g. SPARQL</span>
           </li>
-          <li>B</li>
-          <li>C</li>
+          <li>
+          	  <h3>Declarative queries</h3>
+			  <span class="indent">They define <em>what</em> needs to happen, without specifying the <em>how</em></span><br \>
+              <span class="indent">Reusable query engines transform queries into executable code</span>
+          </li>
       </ul>
+      <pre>SELECT ?messageId ?messageCreationDate ?messageContent WHERE {
+  ?message snvoc:hasCreator pods:6597069767117/profile/card#me;
+    rdf:type snvoc:Post;
+    snvoc:content ?messageContent;
+    snvoc:creationDate ?messageCreationDate;
+    snvoc:id ?messageId.
+}
+      </pre>
+    </section>
+    
+    <section id="requirement-pods" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-pods">
+      <h2 property="schema:name">2. Discovery of data within pods</h2>
+      <ul>
+          <li>
+          	  <h3>Data is spread over multiple files within pods</h3>
+			  <span class="indent">Files for posts, comments, pictures, ...</span>
+          </li>
+      </ul>
+      <br \>
+      <h2 property="schema:name">3. Discovery of data across pods</h2>
+      <img src="img/follow-links.svg" alt="Follow links" style="height: 150px; float: right" \>
+      <ul>
+          <li>
+          	  <h3>Data can be interlinked across pods</h3>
+			  <span class="indent">People can like a post from someone else</span>
+          </li>
+      </ul>
+    </section>
+    
+    <section id="requirement-heterogeneous-location" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous-location">
+      <h2 property="schema:name">4. Handling location heterogeneity</h2>
+      <ul>
+          <li>
+          	  <h3>Pods can store data in different locations</h3>
+			  <span class="indent">Categorize photos by location, date, ...</span><br \>
+              <span class="indent">&rarr; Engines should not make assumptions about locations!</span>
+          </li>
+      </ul>
+      <center>
+          <img src="img/pod-structure.svg" alt="Pod structure" style="height: 300px; margin: 10px" \>
+      </center>
+    </section>
+    
+    <section id="requirement-heterogeneous" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous">
+      <h2 property="schema:name">5. Handling schema heterogeneity</h2>
+      <ul>
+          <li>
+          	  <h3>Different pods may use different schemas</h3>
+			  <span class="indent">Using different RDF vocabularies</span>
+          </li>
+      </ul>
+      <br \>
+      <h2 property="schema:name">6. Handling API heterogeneity</h2>
+      <ul>
+          <li>
+          	  <h3>In the future, pods may be exposed using other APIs</h3>
+			  <span class="indent">Current pods use the document-oriented Linked Data Platform API</span>
+          </li>
+      </ul>
+    </section>
+    
+    <section id="requirement-auth" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-auth">
+      <h2 property="schema:name">7. Authentication</h2>
+      <ul>
+          <li>
+          	  <h3>Not all data is public</h3>
+			  <span class="indent">Query engines need to request resources on behalf of user</span>
+          </li>
+      </ul>
+    </section>
+    
+    <section id="requirement-perf" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-perf">
+      <h2 property="schema:name">8. User-perceived performance</h2>
+      <ul>
+          <li>
+          	  <h3>Decentralized applications should have a good user experience</h3>
+			  <span class="indent">Keeping user attention requires fast query results (~seconds)</span><br \>
+              <span class="indent">At least partial results; full results may be slower</span>
+          </li>
+      </ul>
+      <center>
+          <a href="https://www.uxtigers.com/post/ai-response-time"><img src="img/response-time-limits.png" alt="Response time limits" style="height: 300px; margin: 10px" \></a>
+      </center>
     </section>
     
     <section id="index-approaches" class="slide index" inlist="" rel="schema:hasPart" resource="#index-approaches">
