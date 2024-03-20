@@ -33,31 +33,87 @@
     </header>
 
     <section id="title" class="slide title" inlist="" rel="schema:hasPart" resource="#title">
-      <h2 property="schema:name">Requirements and Challenges for Query Execution across Decentralized Environments</h2>
+      <h2 property="schema:name" style="font-size: 2.5em">Requirements and Challenges for Query Execution across Decentralized Environments</h2>
       <ul class="author inline">
           <li class="current"><a href="https://www.rubensworks.net/">Ruben Taelman</a></li>
       </ul>
       <p class="affiliation"><a href="http://idlab.technology/">Ghent University – imec – IDLab, Belgium</a></p>
     </section>
-
-    <section id="start" class="slide" style="background-image: url('img/TODO.jpg')" inlist="" rel="schema:hasPart" resource="#start">
-        <h2 property="schema:name" class="big" style="margin-top: 20px; color: white; text-shadow: 2px 2px black">INTRO</h2>
-        <ul style="color: white; text-shadow: 2px 2px black; font-size: 1.3em">
-            <li>TODO</li>
+    
+    <section id="start" class="slide" inlist="" rel="schema:hasPart" resource="#start">
+        <h2 property="schema:name" class="big" style="margin-top: 20px; font-size: 1.9em">Decentralized Knowledge Graphs (DKGs)</h2>
+        <ul>
+            <li><h3>Lack of centralized index(es)</h3></li>
+            <li><h3>Massive number of sources</h3></li>
+            <li><h3>Permissioned data</h3></li>
         </ul>
+        <div style="text-align: center">
+            <img src="img/solid-logo.svg" alt="Solid Logo" style="height: 200px; margin: 10px" \>
+            <img src="img/mastodon-logo.svg" alt="Mastodon Logo" style="height: 200px; margin: 10px" \>
+            <img src="img/bluesky-logo.jpg" alt="BlueSky Logo" style="height: 200px; margin: 10px" \>
+        </div>
+    </section>
+
+    <section id="multifaceted" class="slide" style="background-image: url('img/diamond.jpg')" inlist="" rel="schema:hasPart" resource="#multifaceted">
+        <h2 property="schema:name" class="big" style="margin-top: 20px; color: white; text-shadow: 2px 2px black">DKGs on the Web are multifaceted</h2>
+        <ul style="color: white; text-shadow: 2px 2px black; font-size: 1.3em">
+            <li>Publication APIs</li>
+            <li>Access patterns</li>
+            <li>Query languages</li>
+            <li>...</li>
+        </ul>
+    </section>
+    
+    <section id="complexity-devs" class="slide" inlist="" rel="schema:hasPart" resource="#complexity-devs">
+        <h2 property="schema:name" class="big" style="margin-top: 20px">Difficulties for app developers</h2>
+        <ul>
+            <li>
+              <h3>Distinguishing APIs</h3>
+  			  <span class="indent" style="font-style:italic">What kind of API is this?</span>
+            </li>
+            <li>
+              <h3>Interacting with APIs</h3>
+  			  <span class="indent" style="font-style:italic">How to efficiently get data from this API?</span>
+            </li>
+            <li>
+              <h3>Combining APIs</h3>
+  			  <span class="indent" style="font-style:italic">How to combine data across different APIs?</span>
+            </li>
+        </ul>
+    </section>
+    
+    <section id="connection-point" class="slide" inlist="" rel="schema:hasPart" resource="#connection-point">
+        <h2 property="schema:name" class="big" style="margin-top: 20px">Abstract access to DKGs</h2>
+        <h3>Hide the complexities of reading and writing for app developers</h3>
+        <center>
+            <img src="img/computer.png" alt="Application" width="150px" style="margin-right: 20px" />
+            <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+            <img src="img/gear.png" alt="Gear" width="170px" />
+            <span style="font-size: 6em; vertical-align: baseline; position: relative; top: -40px">&harr;</span>
+            <img src="img/globe.png" alt="Globe" width="150px" style="margin-left: 20px" />
+        </center>
+        <p style="text-align: right; font-style: italic"><a href="https://www.flaticon.com/free-icons/application" title="application icons">Image credit</a></p>
+    </section>
+    
+    <section id="abstraction-query" class="slide" inlist="" rel="schema:hasPart" resource="#abstraction-query">
+        <center>
+            <h2 property="schema:name" class="big" style="margin-top: 150px; font-size: 3em">How can query engines abstract access to DKGs?</h2>
+        </center>
     </section>
 	
     <section id="index" class="slide index" inlist="" rel="schema:hasPart" resource="#index">
       <ul>
-        <li><a href="#index-a">TODO</a></li>
-		<li><a href="#index-b">TODO</a></li>
+        <li><a href="#index-requirements">Requirements</a></li>
+		<li><a href="#index-approaches">Current approaches</a></li>
+        <li><a href="#index-challenges">Challenges</a></li>
       </ul>
     </section>
     
-    <section id="index-a" class="slide index" inlist="" rel="schema:hasPart" resource="#index-a">
+    <section id="index-requirements" class="slide index" inlist="" rel="schema:hasPart" resource="#index-requirements">
       <ul>
-        <li class="current"><a href="#index-a">TODO</a></li>
-		<li><a href="#index-b">TODO</a></li>
+        <li class="current"><a href="#index-requirements">Requirements</a></li>
+		<li><a href="#index-approaches">Current approaches</a></li>
+        <li><a href="#index-challenges">Challenges</a></li>
       </ul>
     </section>
 	
@@ -70,6 +126,30 @@
           </li>
           <li>B</li>
           <li>C</li>
+      </ul>
+    </section>
+    
+    <section id="index-approaches" class="slide index" inlist="" rel="schema:hasPart" resource="#index-approaches">
+      <ul>
+        <li><a href="#index-requirements">Requirements</a></li>
+		<li class="current"><a href="#index-approaches">Current approaches</a></li>
+        <li><a href="#index-challenges">Challenges</a></li>
+      </ul>
+    </section>
+    
+    <section id="index-conclusions" class="slide index" inlist="" rel="schema:hasPart" resource="#index-conclusions">
+      <ul>
+        <li><a href="#index-requirements">Requirements</a></li>
+		<li><a href="#index-approaches">Current approaches</a></li>
+        <li class="current"><a href="#index-challenges">Challenges</a></li>
+      </ul>
+    </section>
+    
+    <section id="index-final" class="slide index" inlist="" rel="schema:hasPart" resource="#index-final">
+      <ul>
+        <li><a href="#index-requirements">Requirements</a></li>
+		<li><a href="#index-approaches">Current approaches</a></li>
+        <li><a href="#index-challenges">Challenges</a></li>
       </ul>
     </section>
 	
