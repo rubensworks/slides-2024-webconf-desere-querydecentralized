@@ -160,7 +160,7 @@
       </pre>
     </section>
     
-    <section id="requirement-pods" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-pods">
+    <section id="requirement-pods-in" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-pods-in">
       <h2 property="schema:name">2. Discovery of data within pods</h2>
       <ul>
           <li>
@@ -168,15 +168,22 @@
 			  <span class="indent">Files for posts, comments, pictures, ...</span>
           </li>
       </ul>
-      <br \>
+      <center>
+          <img src="img/pods-storage.svg" alt="Solid Pods Storage" width="450px" />
+      </center>
+    </section>
+    
+    <section id="requirement-pods-out" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-pods-out">
       <h2 property="schema:name">3. Discovery of data across pods</h2>
-      <img src="img/follow-links.svg" alt="Follow links" style="height: 150px; float: right" \>
       <ul>
           <li>
           	  <h3>Data can be interlinked across pods</h3>
 			  <span class="indent">People can like a post from someone else</span>
           </li>
       </ul>
+      <center>
+          <img src="img/follow-links.svg" alt="Follow links" style="height: 300px" \>
+      </center>
     </section>
     
     <section id="requirement-heterogeneous-location" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous-location">
@@ -193,7 +200,7 @@
       </center>
     </section>
     
-    <section id="requirement-heterogeneous" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous">
+    <section id="requirement-heterogeneous-schemas" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous-schemas">
       <h2 property="schema:name">5. Handling schema heterogeneity</h2>
       <ul>
           <li>
@@ -201,7 +208,12 @@
 			  <span class="indent">Using different RDF vocabularies</span>
           </li>
       </ul>
-      <br \>
+      <center>
+          <img src="img/vocabs.png" alt="Vocabularies" style="height: 350px" \>
+      </center>
+    </section>
+    
+    <section id="requirement-heterogeneous-apis" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-heterogeneous-apis">
       <h2 property="schema:name">6. Handling API heterogeneity</h2>
       <ul>
           <li>
@@ -209,6 +221,12 @@
 			  <span class="indent">Current pods use the document-oriented Linked Data Platform API</span>
           </li>
       </ul>
+      <center>
+          <br \>
+          <br \>
+          <img src="img/ldf.png" alt="Linked Data Fragments Axis" style="height: 200px" \>
+          <em><a href="https://arxiv.org/pdf/2002.09172">Linked Data Fragments Axis</a></em>
+      </center>
     </section>
     
     <section id="requirement-auth" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-auth">
@@ -219,6 +237,9 @@
 			  <span class="indent">Query engines need to request resources on behalf of user</span>
           </li>
       </ul>
+      <center>
+          <img src="img/solid-share.svg" alt="Solid Pods Sharing" width="600px" />
+      </center>
     </section>
     
     <section id="requirement-perf" class="slide" inlist="" rel="schema:hasPart" resource="#requirement-perf">
